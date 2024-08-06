@@ -35,11 +35,11 @@ export const getDocument = async({roomId, userId}: {roomId: string; userId: stri
     try {
         const room = await liveblocks.getRoom(roomId);
 
-    const hasAccess = Object.keys(room.usersAccesses).includes(userId);
+    // const hasAccess = Object.keys(room.usersAccesses).includes(userId);
 
-    if(!hasAccess){
-        throw new Error('you do not have a ccess to this document')
-    }
+    // if(!hasAccess){
+    //     throw new Error('you do not have a ccess to this document')
+    // }
     return parseStringify(room)
     } catch (error) {
         console.log("error happened while getting a room",error)
