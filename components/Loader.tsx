@@ -3,9 +3,9 @@ import React from 'react'
 
 const Loader = () => {
   return (
-    <div>
+    <div className='min-h-screen flex items-center justify-center'>
         <Image
-        src="assets/icons/loader.svg"
+        src="/assets/icons/loader.svg"
         alt="loader"
         width={32}
         height={32} 
