@@ -8,14 +8,14 @@ const Navbar = ({children, className} : NavbarProps) => {
     <div className={cn("header", className)}>
       <Link href="/" className='md:flex'>
       <Image
-      src="/assets/icons/logo.svg"
+      src="/logo.png"
       width={120}
       height={32}
       alt='image with name'
       className='hidden md:block'
        />
        <Image
-      src="/assets/icons/logo.svg"
+      src="/logo.png"
       width={32}
       height={32}
       alt='image without name'
