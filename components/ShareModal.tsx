@@ -82,8 +82,8 @@ const ShareModal = ({roomId,collaborators, creatorId, currentUserType}: ShareDoc
                 roomId={roomId}
                 creatorId={creatorId}
                 email={collaborator.email}
-                collaborator={collaborator}
-                user={user.info}
+                collinfoaborator={collaborator}
+                user={user.}
                 />
             ))}
         </ul>
