@@ -15,6 +15,7 @@ import { Label } from './ui/label';
 import { Input } from './ui/input';
 import UserTypeSelector from './UserTypeSelector';
 import Collaborator from './Collaborator';
+import { updateDocumentAccess } from '@/lib/actions/room.actions';
   
 
 const ShareModal = ({roomId,collaborators, creatorId, currentUserType}: ShareDocumentDialogProps) => {
@@ -26,7 +27,18 @@ const ShareModal = ({roomId,collaborators, creatorId, currentUserType}: ShareDoc
     const [email,setEmail] = useState("")
     const [userType, setUserType] = useState<UserType>('viewer')
 
-    const shareDocumentHandler = async () => {}
+    const shareDocumentHandler = async () => {
+      setLoading(true)
+
+        await updateDocumentAccess({
+            roomId,
+            email,
+            userType: userType as UserType,
+            updatedBy: user.info
+        })
+
+        setLoading(false)
+    }
   return (
     <Dialog open={open} onOpenChange={setOpen}>
     <DialogTrigger>
@@ -82,8 +94,8 @@ const ShareModal = ({roomId,collaborators, creatorId, currentUserType}: ShareDoc
                 roomId={roomId}
                 creatorId={creatorId}
                 email={collaborator.email}
-                collinfoaborator={collaborator}
-                user={user.}
+                collaborator={collaborator}
+                user={user.info}
                 />
             ))}
         </ul>
